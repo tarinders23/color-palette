@@ -26,7 +26,7 @@ app.register_listener(setup_options, "before_server_start")
 # app.register_middleware(authenticate_user, "request")
 app.register_middleware(add_cors_headers, "response")
 # Setup Database
-register_tortoise(app, DB_CONFIG, generate_schemas=True)
+# register_tortoise(app, DB_CONFIG, generate_schemas=True)
 
 ###### Tortoise logging ############
 # fmt = logging.Formatter(
