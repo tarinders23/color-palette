@@ -1,3 +1,4 @@
 # Prod Config
 APP_NAME = "COLOR_PALETTE"
 CHATGPT_API_KEY = ''
+GEMINI_API_KEY = ''

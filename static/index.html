@@ -221,6 +221,7 @@ const BOT_NAME = "System";
 
 const urlParams = new URLSearchParams(window.location.search);
 const PERSON_NAME = urlParams.get('user_id');
+const CHAT_PROVIDER = urlParams.get('chat_provider');
 
 msgerForm.addEventListener("submit", event => {
   event.preventDefault();
@@ -306,7 +307,7 @@ function appendBotMessage(jsonData) {
 function botResponse(message) {
     fetch("/v1/api/message/send", {
             method: "POST",
-            body: JSON.stringify({"user_id":PERSON_NAME, "message": message})
+            body: JSON.stringify({"user_id":PERSON_NAME, "message": message, "chat_provider": CHAT_PROVIDER})
         }
     ).then((response) => response.json())
      .then((json) => appendBotMessage(json['data']));

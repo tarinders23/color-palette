@@ -8,7 +8,7 @@ message = Blueprint("message", version=1, url_prefix="message")
 @message.post("/send", name="user_message_send")
 async def user_message_send(request: Request):
     payload = request.json
-    data = UserChatSession.send(**payload)
+    data = UserChatSession.send(payload.get("user_id"), payload.get("message"), payload.get("chat_provider"))
     # data = [
     #     {
     #         "name": "Red Dusk",
